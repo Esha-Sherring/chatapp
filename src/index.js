@@ -19,7 +19,7 @@ const port= process.env.PORT || 3000;
 const publicDirectoryPath=path.join(__dirname,'../public')
 console.log(publicDirectoryPath);
 app.use(express.static(publicDirectoryPath))
-
+app.listen(process.env.PORT || 3000);
 io.on('connection', (socket)=>{
 
     console.log("New websocket Connection");
