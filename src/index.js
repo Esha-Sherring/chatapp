@@ -81,11 +81,11 @@ io.on('connection', (socket)=>{
 
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.render('index.html');
 })
 
 app.get('/chat', (req, res) => {
-    res.render('chat.ejs');
+    res.render('chat.html');
 })
 server.listen(port,()=>{
     console.log("server running on port 3000");
