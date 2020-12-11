@@ -19,6 +19,7 @@ const port= process.env.PORT || 3000;
 const publicDirectoryPath=path.join(__dirname,'../public')
 console.log(publicDirectoryPath);
 app.use(express.static(publicDirectoryPath))
+app.set('view engine', 'ejs');
 
 io.on('connection', (socket)=>{
 
@@ -78,6 +79,14 @@ io.on('connection', (socket)=>{
     
 });
 
+
+app.get('/', (req, res) => {
+    res.render('index.ejs');
+})
+
+app.get('/chat', (req, res) => {
+    res.render('chat.ejs');
+})
 server.listen(port,()=>{
     console.log("server running on port 3000");
 })
